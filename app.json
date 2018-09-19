@@ -15,7 +15,8 @@
     "page/admin/modifyIndex/modifyIndex",
     "page/admin/orderDetail/orderDetail",
     "page/admin/classifyMgr/classifyMgr",
-    "page/admin/goodsMgr/goodsMgr"
+    "page/admin/goodsMgr/goodsMgr",
+    "page/component/databaseGuide/savadb"
   ],
   "window": {
     "navigationBarTextStyle": "#ffffff",

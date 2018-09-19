@@ -14,7 +14,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.3.0",
 	"appid": "wx92d9a3399ebd818c",
-	"projectname": "%E9%9B%B6%E9%A3%9F%E5%95%86%E5%9F%8E",
+	"projectname": "%E5%95%86%E5%9F%8E-%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
@@ -34,7 +34,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 2,
 			"list": [
 				{
 					"id": 0,
@@ -47,6 +47,11 @@
 					"name": "admin",
 					"pathName": "page/admin/admin",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "savedb",
+					"pathName": "page/component/databaseGuide/savadb"
 				}
 			]
 		}

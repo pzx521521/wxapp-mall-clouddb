@@ -144,9 +144,7 @@ Page({
   getOrdersList: function (e) {
     const db = wx.cloud.database();
     // 查询当前用户所有的 counters
-    db.collection('order').where({
-      _openid: this.data.openid
-    }).get({
+    db.collection('order').get({
       success: res => {
         this.setData({
           orders: res.data,
