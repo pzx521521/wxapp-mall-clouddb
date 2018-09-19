@@ -1,0 +1,29 @@
+<view class="main">
+    <view wx:if="{{hasList}}">
+        <view class="orders">订单编号:{{orders.name}}</view>
+        <view class="cart-box">
+            <view class="cart-list" wx:for="{{orders.data}}" wx:key="{{index}}">
+              <image class="cart-thumb" src="{{item.pic}}"></image>
+                <text class="cart-pro-name">{{item.title}}</text>
+                <text class="cart-pro-price">￥{{item.price}}</text>
+                <view class="cart-count-box">
+                    <text class="cart-count-num">{{item.count}}</text>
+                </view>     
+                <text class="cart-del">{{item.price*item.count}}</text>        
+            </view>
+        </view>
+        <view class="cart-address">
+
+        </view>
+        <view class="cart-footer">
+          <view class="cart-address-detail">
+            <view class="">{{orders.address.name}}: {{orders.address.phone}}</view> 
+            <view class="">{{orders.address.detail}}</view>  
+          </view>
+          <text class="cart-toatl-price">￥{{orders.money}}</text>
+        </view>
+    </view>
+    <view wx:else>
+        <view class="cart-no-data">未找到订单号为:{{id}}的订单哦~</view>
+    </view>
+</view>

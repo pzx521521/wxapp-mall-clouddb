@@ -1,0 +1,34 @@
+<view class="container">
+  <view class="nav_left">
+    <block wx:for="{{navLeftItems}}">
+      <view class="nav_left_items {{curNav == item.desc ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.desc}}">{{item.desc}}</view>
+    </block>
+  </view>
+  <view class="nav_right">
+    <view wx:if="{{navRightItems}}">
+      <block wx:for="{{navRightItems}}">
+        <view wx:if="{{item.classify == curNav}}">
+          <view class="nav_right_items">
+            <navigator url="../details/details?id={{item.id}}">
+              <view>
+                <block wx:if="{{item.pic}}">
+                  <image src="{{item.pic}}"></image>
+                </block>
+                <block wx:else>
+                  <image src="http://temp.im/50x30"></image>
+                </block>
+              </view>
+              <view wx:if="{{item.desc}}">
+                <text space="ensp">{{item.desc}} ¥:{{item.price}}</text>
+              </view>
+              <view wx:else>
+                <text space="ensp">{{item.title}} ¥:{{item.price}}</text>
+              </view>
+            </navigator>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view wx:else>暂无数据</view>
+  </view>
+</view>

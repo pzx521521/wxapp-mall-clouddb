@@ -1,0 +1,43 @@
+<!--page/admin/allOrders/allOrders.wxml-->
+<view wx:if="{{!isdeal}}" class="orders-box">
+    <view class="orders">未处理订单
+    <button size="mini" class="deal-btn" bindtap="changeDeal">查看已处理订单</button> 
+    </view>
+    <view class="orders-list" wx:for="{{orders_nodeal}}" wx:key="index">
+      <navigator url="../orderDetail/orderDetail?id={{item.name}}">
+        <view>订单用户：{{item.nickName}}</view>
+        <view class="orders-detail">
+            <image src="{{item.thumb}}"></image>
+            <view class="">订单编号: {{item.name}}</view>
+            <view class="">地址: {{item.address.name +','+ item.address.phone}}</view>
+            <view class="">{{item.address.detail}}</view>
+            <text class="orders-status">{{item.status}}</text>
+        </view>
+        <view class="orders-footer">
+            <text>实付：￥{{item.money}}</text>
+            <button size="mini" class="orders-btn" data-obj="{{item}}" data-index="{{index}}" data-dbid="{{item._id}}" bindtap="markDeal">标记为已处理</button> 
+        </view>  
+      </navigator>              
+    </view>
+</view>
+
+<view wx:if="{{isdeal}}" class="orders-box">
+    <view class="orders">已处理订单
+    <button size="mini" class="deal-btn" bindtap="changeDeal">查看未处理订单</button> 
+    </view>
+    <view class="orders-list" wx:for="{{orders_deal}}" wx:key="index">
+      <navigator url="../orderDetail/orderDetail?id={{item.name}}">
+        <view>订单用户：{{item.nickName}}</view>
+        <view class="orders-detail">
+            <image src="{{item.thumb}}"></image>
+            <view class="">订单编号: {{item.name}}</view>
+            <view class="">地址: {{item.address.name +','+ item.address.phone}}</view>
+            <view class="">{{item.address.detail}}</view>
+            <text class="orders-status">{{item.status}}</text>
+        </view>
+        <view class="orders-footer">
+            <text>实付：￥{{item.money}}</text>
+        </view> 
+      </navigator>               
+    </view>
+</view>
