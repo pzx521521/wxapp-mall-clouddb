@@ -131,7 +131,7 @@ Page({
     }).get({
       success: res => {
         this.setData({
-          navRightItems: res.data[0].data
+          navRightItems: res.data[0]
         })
         console.log('[数据库] [查询记录] 成功: ', res)
       },
