@@ -1,2 +1,0 @@
-<!--page/component/databaseGuide/savadb.wxml-->
-<button bindtap='showDB'>showDB</button>
