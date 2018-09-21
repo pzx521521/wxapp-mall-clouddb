@@ -1,0 +1,41 @@
+<!--page/admin/goodsMgr/goodsMgr.wxml-->
+<view class="classify-box">
+    <view class="classify">添加商品 最大id:{{maxid}}, 请填{{maxid + 1}}</view>
+    <form bindsubmit='getValue'>
+      <view class="classify-add-detail">    
+        <!-- 必填 -->
+        <view class='create-tip'>必填项</view>
+        <input type='text' class='create-title' placeholder="商品编号(不能重复):" name="goodid"></input>   
+        <input type='text' class='create-title' placeholder="分类:" name="goodclassify"></input>   
+        <!-- 分类页 -->
+        <view class='create-tip'>分类页-必填项</view>
+        <input type='text' class='create-title' placeholder="分类页-标题: " name="gooddesc"></input>           
+        <input type='text' class='create-title' placeholder="分类页-图片: " name="goodpic"></input>     
+        <input type='text' class='create-title' placeholder="分类页-价格: " name="gooddprice"></input> 
+        <view class='create-tip'>详情页</view>
+        <!-- 详情页 -->
+        <input type='text' class='create-title' placeholder="详情页-标题" name="gooddetail"></input>  
+        <input type='text' class='create-title' placeholder='详情页-大图片可以多个用"#"分开:' name="goodgoodspics"></input>  
+        <input type='text' class='create-title' placeholder="详情页-产品参数: " name="goodparameter"></input> 
+        <input type='text' class='create-title' placeholder="详情页-售后: " name="goodservice"></input>  
+        <input type='text' class='create-title' placeholder="详情页-标题): " name="goodtitle"></input>
+      </view>
+      <view class="classify-footer">
+        <button size="mini" class="classify-btn" form-type='submit'>添加</button> 
+      </view>  
+    </form>	
+    <text> \n </text>
+    <view class="classify-list" wx:for="{{goods}}" wx:key="index">
+      <view class="classify-detail">
+          <image src="{{item.pic}}"></image>
+          <view class="">分类: {{item.classify}}</view>
+          <view class="">分类页-标题: {{item.desc}}</view>
+          <view class="">分类页-价格: {{item.price}}</view>
+      </view>
+      <view class="classify-footer">
+          <button size="mini" class="classify-btn" data-index="{{index}}" bindtap="deleteGoods">删除</button> 
+      </view>               
+    </view>    
+</view>
+
+

@@ -1,0 +1,24 @@
+<!--page/admin/deleteClassify/deleteClassify.wxml-->
+<view class="classify-box">
+    <view class="classify">添加分类</view>
+    <view class="classify-detail">
+        <input class='create-title' placeholder="编号(用于排序):" bindinput="classifyid"></input>   
+        <input class='create-title' placeholder="分类(需要写在商品中): " bindinput="classifydesc"></input>   
+    </view>
+    <view class="classify-footer">
+        <button size="mini" class="classify-btn" bindtap="addClassify">添加</button> 
+    </view>   
+    <text> \n </text>
+    <text> \n </text>
+    <text> \n </text>
+    <view class="classify-list" wx:for="{{classify}}" wx:key="index">
+      <view class="classify-detail">
+          <view class="">编号(用于排序): {{item.id}}</view>
+          <view class="">分类(需要写在商品中): {{item.desc}}</view>
+      </view>
+      <view class="classify-footer">
+          <button size="mini" class="classify-btn" data-index="{{index}}" bindtap="deleteClassify">删除</button> 
+      </view>               
+    </view>    
+</view>
+

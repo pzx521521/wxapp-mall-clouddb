@@ -1,0 +1,74 @@
+<!--page/admin/modifyIndex/modifyIndex.wxml-->
+<!--page/admin/allOrders/allOrders.wxml-->
+<view wx:if="{{imodel == 1}}" class="orders-box">
+    <view class="orders">
+      <button size="mini" class="deal-btn-select" bindtap="changeDeal" data-index="1">轮播图片</button> 
+      <button size="mini" class="deal-btn" bindtap="changeDeal" data-index="2">小图片</button> 
+      <button size="mini" class="deal-btn" bindtap="changeDeal" data-index="3">大图片</button> 
+    </view>
+    <view class="orders-detail">
+        <input class='create-title' placeholder="图片的地址(必须是网络图片):" bindinput="imagepicurl" bindblur='inputOnBlur'></input>   
+    </view>
+    <view class="orders-footer">
+        <button size="mini" class="orders-btn" bindtap="addImages">添加</button> 
+    </view>   
+    <text> \n </text>  
+    <view class="orders-list" wx:for="{{images}}" wx:key="index">
+        <view class="orders-detail">
+        <image class="orders-detail-img" src="{{item.picurl}}"></image>
+        </view>
+        <view class="orders-footer">
+            <button size="mini" class="orders-btn" data-obj="{{item}}" data-index="{{index}}" data-dbid="{{item._id}}" bindtap="deleteImages">删除</button> 
+        </view>              
+    </view>
+</view>
+
+<view wx:if="{{imodel == 2}}" class="orders-box">
+    <view class="orders">
+      <button size="mini" class="deal-btn" bindtap="changeDeal" data-index="1">轮播图片</button> 
+      <button size="mini" class="deal-btn-select" bindtap="changeDeal" data-index="2">小图片</button> 
+      <button size="mini" class="deal-btn" bindtap="changeDeal" data-index="3">大图片</button> 
+    </view>
+    <view class="orders-detail">
+        <input class='create-title' placeholder="图片的地址(必须是网络图片):" bindinput="venuesItemspicurl"></input>   
+        <input class='create-title' placeholder="对应商品的ID:" bindinput="venuesItemsid"></input>   
+    </view>
+    <view class="orders-footer">
+        <button size="mini" class="orders-btn" bindtap="addVenuesItems">添加</button> 
+    </view>     
+    <view class="orders-list" wx:for="{{venuesItems}}" wx:key="index">
+        <view class="orders-detail">
+            <image class="orders-detail-img-venuesItems" src="{{item.smallpic}}"></image>            
+        </view>             
+        <view class="orders-footer">
+            <text>id: {{item.id}}</text>
+            <button size="mini" class="orders-btn" data-obj="{{item}}" data-index="{{index}}" data-dbid="{{item._id}}" bindtap="deleteVenuesItems">删除</button> 
+        </view>   
+    </view>
+</view>
+
+<view wx:if="{{imodel == 3}}" class="orders-box">
+    <view class="orders">
+      <button size="mini" class="deal-btn" bindtap="changeDeal" data-index="1">轮播图片</button> 
+      <button size="mini" class="deal-btn" bindtap="changeDeal" data-index="2">小图片</button> 
+      <button size="mini" class="deal-btn-select" bindtap="changeDeal" data-index="3">大图片</button> 
+    </view>
+    <view class="orders-detail">
+        <input class='create-title' placeholder="图片的地址(必须是网络图片):" bindinput="choiceItemspicurl"></input>   
+        <input class='create-title' placeholder="对应商品的标题:" bindinput="choiceItemsTitel"></input>  
+        <input class='create-title' placeholder="对应商品的ID:" bindinput="choiceItemsid"></input>  
+    </view>
+    <view class="orders-footer">
+        <button size="mini" class="orders-btn" bindtap="addChoiceItems">添加</button> 
+    </view>         
+    <view class="orders-list" wx:for="{{choiceItems}}" wx:key="index">
+        <view class="orders-detail">
+            <image class="orders-detail-img-choiceItems" src="{{item.goodspics}}"></image>
+            <view class="orders-detail-title">Title: {{item.title}}</view>
+        </view>
+        <view class="orders-footer">
+            <text>id: {{item.id}}</text>
+            <button size="mini" class="orders-btn" data-obj="{{item}}" data-index="{{index}}" data-dbid="{{item._id}}" bindtap="deleteChoiceItems">删除</button> 
+        </view>             
+    </view>
+</view>

@@ -1,0 +1,39 @@
+<!--index.wxml-->
+<view wx:if="{{vertify}}" class="container">
+  <!-- 修改主页面 -->
+  <view class="uploader">
+    <navigator url="modifyIndex/modifyIndex" open-type="navigate" class="uploader-text">
+      <text>修改主页面</text>
+    </navigator>
+  </view>
+
+  <!-- 分类管理 -->
+  <view class="uploader">
+    <navigator url="classifyMgr/classifyMgr" open-type="navigate" class="uploader-text">
+      <text>分类管理</text>
+    </navigator>
+  </view>
+
+  <!-- 商品管理 -->
+  <view class="uploader">
+    <navigator url="goodsMgr/goodsMgr" open-type="navigate" class="uploader-text">
+      <text>商品管理</text>
+    </navigator>
+  </view>
+
+  <!-- 查看订单 -->
+  <view class="uploader">
+    <navigator url="allOrders/allOrders" open-type="navigate" class="uploader-text">
+      <text>查看订单</text>
+    </navigator>
+  </view>
+
+  <!-- 修改密码 -->
+  <view class="uploader" bindtap="modalinput">    
+      <text class="uploader-text">修改密码</text>
+  </view>  
+</view>
+  <!-- 弹出框 修改密码 -->
+  <modal hidden="{{hiddenmodalput}}" title="{{tip}}" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
+      <input type='text' placeholder="请输入内容" bindinput="getpassword" auto-focus/>  
+  </modal> 

@@ -1,0 +1,38 @@
+<view class="main">
+    <view class="header">
+        <!-- 需要使用 button 来授权登录 -->
+        <view bindtap='intoAdmin'>
+          <open-data type="userAvatarUrl" class="thumb"></open-data>
+        </view>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        <view class="order-login">
+          <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权登录 </button>         
+        </view>   
+    </view>
+    <view class="address-box">
+        <view class="address-manage">
+            <navigator url="/page/component/address/address">地址管理</navigator>
+        </view>
+        <view wx:if="{{hasAddress}}" class="address-list">
+            <view>{{address.name}}</view>
+            <view>{{address.phone}}</view>
+            <view>{{address.detail}}</view>
+        </view>
+    </view>
+    <view class="orders-box">
+        <view class="orders">我的订单</view>
+        <view class="orders-list" wx:for="{{orders}}" wx:key="index">
+            <view class="orders-number">订单编号：{{item.number}}</view>
+            <view class="orders-detail">
+                <image src="{{item.thumb}}"></image>
+                <view class="">{{item.name}}</view>
+                <!-- <view class="">数量: {{item.count}}</view> -->
+                <text class="orders-status">{{item.status}}</text>
+            </view>
+            <view class="orders-footer">
+                <text>实付：￥{{item.money}}</text>
+                <!-- <button size="mini" class="orders-btn" bindtap="payOrders">付款</button> -->
+            </view>
+        </view>
+    </view>
+</view>
