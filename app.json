@@ -19,7 +19,7 @@
     "page/component/databaseGuide/savadb"
   ],
   "window": {
-    "navigationBarTextStyle": "#ffffff",
+    "navigationBarTextStyle": "white",
     "navigationBarTitleText": "微信商城云DB",
     "navigationBarBackgroundColor": "#AB956D",
     "backgroundColor": "#eeeeee",
@@ -28,7 +28,7 @@
   "tabBar": {
     "color": "#b7b7b7",
     "selectedColor": "#AB956D",
-    "borderStyle": "#f5f5f5",
+    "borderStyle": "white",
     "backgroundColor": "#f5f5f5",
     "list": [
       {
@@ -63,5 +63,6 @@
     "uploadFile": 10000,
     "downloadFile": 10000
   },
-  "debug": false
+  "debug": false,
+  "sitemapLocation": "sitemap.json"
 }
